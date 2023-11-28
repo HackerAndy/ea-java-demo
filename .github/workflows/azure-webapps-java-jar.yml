@@ -27,6 +27,9 @@ env:
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
   workflow_dispatch:
 
 permissions:
@@ -49,7 +52,10 @@ jobs:
           distribution: ${{ env.DISTRIBUTION }}
           cache: 'maven'
 
-      - name: Build and run tests
+      - name: Maven Build
+        run: mvn -B package --file rest/pom.xml
+        
+      - name: Run Unit tests
         run: mvn test --batch-mode --fail-at-end
       
       - name: Publish Test Report
