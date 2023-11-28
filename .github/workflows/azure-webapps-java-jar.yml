@@ -56,7 +56,7 @@ jobs:
           path: '${{ github.workspace }}/rest/target/*.jar'
      
       - name: Test
-        run: mvn --batch-mode -Dmaven.test.failure.ignore=true surefire-report:report
+        run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
 
       - name: Report
         uses: dorny/test-reporter@v1
