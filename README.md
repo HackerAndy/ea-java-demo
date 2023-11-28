@@ -17,7 +17,7 @@ Execute Tests:
 ```sh
  ./mvnw test   
  ```
-
+ 
 # Other Instructions:
 
 ## Test Tutorial:
@@ -32,7 +32,13 @@ https://spring.io/guides/gs/multi-module/
 ## Deployments
 * [GitHub Actions TO Azure](https://learn.microsoft.com/en-us/azure/app-service/deploy-github-actions?tabs=applevel)
 
-    GitHub Secrets Location (Azure publishing profile)  
+    1. [Generate Azure Credentials](https://learn.microsoft.com/en-us/azure/app-service/deploy-github-actions?tabs=applevel#generate-deployment-credentials)  
+
+        * Go to your app service in the Azure portal.
+        * On the Overview page, select Get Publish profile.
+        * Save the downloaded file. You'll use the contents of the file to create a GitHub secret.
+
+    1. Store secrets in GitHub (Azure publishing profile)  
     In GitHub:  
     `Settings > Security > Secrets and variables > Actions > New repository secret`
 
